@@ -1,1 +1,11 @@
-theme: jekyll-theme-cayman
+# Site settings
+title: 小菜鸡
+email: 739416782@qq.com
+description: > # this means to ignore newlines until "baseurl:"
+  stay hungry,stay foolish!
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://systemoutprint.github.io" # the base hostname & protocol for your site
+github_username:  systemoutprint
+
+# Build settings
+markdown: kramdown
