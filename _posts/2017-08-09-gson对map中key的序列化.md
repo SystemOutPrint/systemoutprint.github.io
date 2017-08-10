@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "gson对map中key的序列化与发序列"
+title:  "gson对map中key的序列化"
 date:   2017-08-09
 categories: gson
 ---
