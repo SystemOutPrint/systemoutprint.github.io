@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "java中String的intern"
+title:  "Java中String的intern"
 date:   2017-06-09
-categories: java
+categories: Java
 ---
 
 ## 0x01 复现问题
