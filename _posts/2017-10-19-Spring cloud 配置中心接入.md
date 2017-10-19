@@ -156,3 +156,16 @@ spring:
   application:
     name: 'kof-config-server'
 ```
+
+## 0x06 uri规则
+访问资源可以通过
+
+		/{application}/{profile}[/{label}]
+		/{application}-{profile}.yml
+		/{label}/{application}-{profile}.yml
+		/{application}-{profile}.properties
+		/{label}/{application}-{profile}.properties
+
+{application} 对应客户端的”spring.application.name”<br>
+{profile} 对应客户端的”spring.profiles.active”（逗号分隔）<br>
+{label} 服务端依赖的资源文件标记（比如git 的master）<br>
