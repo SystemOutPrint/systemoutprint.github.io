@@ -169,3 +169,32 @@ spring:
 {application} 对应客户端的”spring.application.name”<br>
 {profile} 对应客户端的”spring.profiles.active”（逗号分隔）<br>
 {label} 服务端依赖的资源文件标记（比如git 的master）<br>
+
+## 0x07 通过eureka发现config server
+在config client新建一个bootstrap.yml，写入如下代码。
+```yml
+server:
+  port: 8000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: 'http://kof-ms.sys.ledo.com:8761/eureka/,http://kof-ms.sys.ledo.com:8762/eureka/' 
+  instance:
+    preferIpAddress: true
+
+spring:
+  cloud:
+    config:
+      enabled: true
+      label: trunk
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: 'config-server'
+```
+在spring boot中，bootstrap.yml会比application.yml先行加载。如果把这段配置贴在application.yml中，会发现：
+
+		 c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at: http://localhost:8888
+		 
+而不是我们期望的config-server地址，所以需要将对发现配置中心的配置放到bootstrap.yml中才OK。
