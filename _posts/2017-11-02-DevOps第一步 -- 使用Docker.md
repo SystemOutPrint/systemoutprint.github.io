@@ -28,10 +28,11 @@ __VOLUME ["/data"]__：授权从容器到主机访问的目录。<br>
 * __docker build --tag xxx:tag dir__ 构建镜像。
 * __docker run --name xxx docker-image__ 指定容器的名字。
 * __docker run -d docker-image__ 后台运行根据镜像运行一个容器。
-* __docker run -p srcip:srcport dstip:dstport docker-image__ 端口映射。
+* __docker run -p hostip:hostport:containerport docker-image__ 端口映射。
 * __docker ps__ 查看当前所有运行的docker容器。
+* __docker ps -a__ 查看所有运行过的docker容器。
 * __docker kill xx__ 杀掉当前运行的docker容器。
-* __docker rm xx__ 删除容器。
+* __docker rmi xx__ 删除镜像。
 * __docker start xxx__ 启动容器。
 * __docker restart xxx__ 重启容器。
 * __docker stop xxx__ 停止容器。
@@ -39,7 +40,38 @@ __VOLUME ["/data"]__：授权从容器到主机访问的目录。<br>
 * __docker run --interactive --tty docker-image__ 创建带有交互式的容器。
 * __docker-machine ip default__ 查看当前docker的默认ip。
 
+## 0x04 fgs-env的Dockerfile
+
+		FROM centos
+		MAINTAINER caijiahe <caijiahe@ledo.com>
+
+		COPY cmake-3.10.0-rc4/ /export/cmake
+		COPY jsoncpp/ /export/jsoncpp/
+		COPY rabbitmq-c/ /export/rabbitmq-c/
+
+		RUN yum install make -y
+		RUN yum install gcc-c++ -y
+		RUN yum install openssl-devel -y
+
+		WORKDIR /export/cmake
+		RUN ./configure
+		RUN make
+		ENV PATH /export/cmake/bin:$PATH
+
+		WORKDIR /export/jsoncpp
+		RUN cmake -G "Unix Makefiles"
+		RUN make
+		RUN make install
+
+		WORKDIR /export/rabbitmq-c
+		RUN cmake .
+		RUN cmake --build .
+		RUN make
+		RUN make install
+		RUN echo "/usr/local/lib64" >> /etc/ld.so.conf
+		RUN ldconfig
+
 
 ## 0x04 扩展阅读
 
-http://www.wangminli.com/?p=1179
+[windows上映射端口无法访问的问题](http://www.wangminli.com/?p=1179)
