@@ -32,7 +32,8 @@ __VOLUME ["/data"]__：授权从容器到主机访问的目录。<br>
 * __docker ps__ 查看当前所有运行的docker容器。
 * __docker ps -a__ 查看所有运行过的docker容器。
 * __docker kill xx__ 杀掉当前运行的docker容器。
-* __docker rmi xx__ 删除镜像。
+* __docker rmi imageid__ 删除镜像。
+* __docker rm containerid__ 删除容器。
 * __docker start xxx__ 启动容器。
 * __docker restart xxx__ 重启容器。
 * __docker stop xxx__ 停止容器。
@@ -41,7 +42,6 @@ __VOLUME ["/data"]__：授权从容器到主机访问的目录。<br>
 * __docker-machine ip default__ 查看当前docker的默认ip。
 
 ## 0x04 fgs-env的Dockerfile
-Dockerfile demo
 
 		FROM centos
 		MAINTAINER caijiahe <caijiahe@ledo.com>
@@ -72,7 +72,19 @@ Dockerfile demo
 		RUN echo "/usr/local/lib64" >> /etc/ld.so.conf
 		RUN ldconfig
 
+## 0x05 docker push时候遇到的问题
+问题：<br>
+Error response from daemon: Get https://ip:port/v1/_ping: http: server gave HTTP response to HTTPS client.
 
-## 0x05 扩展阅读
+解决办法:
+* 在docker宿主机(Windows上docker的宿主机是VirtualBox)上创建文件 /etc/docker/daemon.json
+
+		[root@localhost ~]# echo '{ "insecure-registries":    ["ip:port"] }' > /etc/docker/daemon.json
+
+* 重载docker
+		
+		[root@localhost ~]# systemctl restart docker
+		
+## 0x06 扩展阅读
 
 [windows上映射端口无法访问的问题](http://www.wangminli.com/?p=1179)
