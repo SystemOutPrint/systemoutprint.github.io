@@ -41,6 +41,7 @@ __VOLUME ["/data"]__：授权从容器到主机访问的目录。<br>
 * __docker-machine ip default__ 查看当前docker的默认ip。
 
 ## 0x04 fgs-env的Dockerfile
+Dockerfile demo
 
 		FROM centos
 		MAINTAINER caijiahe <caijiahe@ledo.com>
@@ -72,6 +73,6 @@ __VOLUME ["/data"]__：授权从容器到主机访问的目录。<br>
 		RUN ldconfig
 
 
-## 0x04 扩展阅读
+## 0x05 扩展阅读
 
 [windows上映射端口无法访问的问题](http://www.wangminli.com/?p=1179)
