@@ -20,6 +20,7 @@ __WORKDIR \</path/to/workdir\>__：指定CMD、ENTRYPOINT、RUN命令的工作�
 __EXPOSE \<port1\> \<port2\>__：指定容器在运行时监听的端口。<br>
 __ENV \<key\> \<value\>__：指定环境变量。<br>
 __VOLUME ["/data"]__：授权从容器到主机访问的目录。<br>
+__ARG xxx__：声明一个参数。<br>
 
 
 ## 0x03 Docker常用命令

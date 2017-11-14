@@ -123,3 +123,54 @@ maven插件配置
 
 禁用字节码验证即可。
 
+
+## 0x06 demo
+```java
+@PowerMockIgnore( {"javax.management.*"}) 
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({table.Bag.class, XBean.class, Logs.class, Onlines.class, ConfigManager.class})
+public class BagAddTest {
+
+	private final static long TEST_ROLEID = 1024L;
+	private final static int TEST_ITEM_ID = 10086;
+	
+	@Before
+	public void prepare() {
+		PowerMockito.mockStatic(table.Bag.class);   
+		PowerMockito.when(table.Bag.update(TEST_ROLEID)).thenReturn(null);
+		PowerMockito.when(table.Bag.insert(TEST_ROLEID)).thenReturn(new xbean.Bag());
+		
+		PowerMockito.suppress(MemberModifier.method(XBean.class, "verifyStandaloneOrLockHeld"));
+		PowerMockito.suppress(MemberModifier.method(Logs.class, "logObject"));
+		PowerMockito.suppress(MemberModifier.method(Onlines.class, "sendWhileCommit", new Class[]{Long.class, Protocol.class}));
+		
+		SCommonConfig mockCommonCfg = new SCommonConfig();
+		mockCommonCfg.param1 = 10;
+		Map<Integer, SCommonConfig> mockCommonCfgs = new HashMap<>();
+		mockCommonCfgs.put(1, mockCommonCfg);
+		
+		SItemServerConfig itemServerCfg = new SItemServerConfig();
+		itemServerCfg.isStack = 2;
+		Map<Integer, SItemServerConfig> mockItemCfgs = new HashMap<>();
+		mockItemCfgs.put(TEST_ITEM_ID, itemServerCfg);
+		
+		Map<String, Object> beanName2Cfgs = new HashMap<>();
+		beanName2Cfgs.put(SCommonConfig.class.getName(), mockCommonCfgs);
+		beanName2Cfgs.put(SItemServerConfig.class.getName(), mockItemCfgs);
+		
+		ConfigManager cfgMgr = ConfigManager.getInstance();
+		try {
+			MemberModifier.field(ConfigManager.class, "beanName2Cfgs").set(cfgMgr, beanName2Cfgs);
+		} catch (IllegalArgumentException | IllegalAccessException e) {
+			e.printStackTrace();
+		};
+	}
+	
+}
+
+```
+* @RunWith指定了Junit的执行类为PowerMockRunner。
+* @PrepareForTest指定下面要对哪些类进行Mock。
+* 如果对静态方法进行mock，则需要先使用PowerMockito.mockStatic。
+* PowerMockito.when(A).thenReturn(a)的意思就是当调用A方法的时候，返回a。
+* PowerMockito.suppress(A)代表禁用A方法。
