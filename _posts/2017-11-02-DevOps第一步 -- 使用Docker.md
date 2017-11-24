@@ -12,7 +12,7 @@ Docker 是一个开源的应用容器引擎，让开发者可以打包他们的�
 __FROM \<image name\>__：基于哪个Docker镜像来构建新镜像。<br>
 __MAINTAINER \<author name\>__：作者和联系方式。<br>
 __RUN \<command\>__：在Docker中执行一个bash或者exec。<br>
-__ADD \<src\> \<dest\>__：复制文件指令。dest是容器内的路径，src可以是URL或者是启动配置上下文中的一个文件。<br>
+__ADD \<src\> \<dest\>__：复制文件指令。dest是容器内的路径，src可以是URL或者是启动配置上下文中的一个文件。(不支持zip，支持tar)<br>
 __COPY \<src\> \<dest\>__：和ADD类似，但是如果src是归档文件，则不会解压。<br>
 __CMD ["executable", "param1", "param2"]__：真正执行命令，docker run后面的参数将覆盖前面命令后面的参数。多条只有最后一条会生效。<br>
 __ENTRYPOINT ["executable", "param1", "param2"]__：真正执行命令，docker run后面的参数将追加到命令后面。多条只有最后一条会生效。<br>

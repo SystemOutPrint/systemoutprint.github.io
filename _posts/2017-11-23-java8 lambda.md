@@ -129,10 +129,7 @@ System.out.println(sum);
 * Collectors.groupingBy(组名) 根据组名将流分为N个组，返回值的key值是组名，value是一个List
 * Collectors.partitioningBy(判断条件) 根据组名将流分为2个组，返回值的key值是true和false，value是一个List
 
-
 ```java
 List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
 HashSet<Integer> hs = list.stream().collect(Collectors.toCollection(HashSet::new));
-
-
 ```
