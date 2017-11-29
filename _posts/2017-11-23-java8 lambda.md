@@ -133,3 +133,23 @@ System.out.println(sum);
 List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
 HashSet<Integer> hs = list.stream().collect(Collectors.toCollection(HashSet::new));
 ```
+
+## 0x0E distinct
+不改变流中元素顺序，去除流中重复元素。
+```java
+// outpur aabb
+Stream<String> words = Stream.of("aa", "aa", "bb");
+words.distinct().forEach(System.out::print);
+```
+
+## 0x0F sorted
+对流中元素进行排序。也可以提供一个Comparator。
+```java
+// outpur aabbcc
+Stream<String> words = Stream.of("bb", "aa", "cc");
+words.sorted().forEach(System.out::print);
+
+// outpur aaabbc
+words = Stream.of("bb", "aaa", "c");
+words.sorted((str1, str2) -> str2.length() - str1.length()).forEach(System.out::print);
+```
