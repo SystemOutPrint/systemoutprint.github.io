@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "spring cloud feign loadbalancerkey"
+title:  "Spring cloud feign的loadbalancerkey扩展"
 date:   2018-01-05
-categories: Java
+categories: Spring
 ---
 
 ## 0x01 netflix-loadbalancer
