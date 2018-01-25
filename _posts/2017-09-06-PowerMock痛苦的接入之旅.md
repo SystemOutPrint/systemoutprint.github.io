@@ -174,3 +174,15 @@ public class BagAddTest {
 * 如果对静态方法进行mock，则需要先使用PowerMockito.mockStatic。
 * PowerMockito.when(A).thenReturn(a)的意思就是当调用A方法的时候，返回a。
 * PowerMockito.suppress(A)代表禁用A方法。
+
+## 0x07 mock和spy的区别
+* mock的类，所有方法都不是真实的方法。
+* spy的类，所有方法都是真实方法。
+```java
+	// 不推荐
+	when(obj.xxxMethod()).thenReturn("xxx");
+	
+	// 推荐
+    doReturn("xxx").when(obj).xxxMethod();
+```
+spy的类，用when去设置模拟返回值时，真实方法会先执行一次。使用doReturn去设置的话，就不会产生上面的问题，因为有when来进行控制要模拟的方法，所以不会执行原来的方法。
