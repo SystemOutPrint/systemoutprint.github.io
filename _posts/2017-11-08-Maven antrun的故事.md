@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "maven antrun的故事"
+title:  "Maven antrun的故事"
 date:   2017-11-08
-categories: maven
+tags:
+    - Maven
+    - Ant
 ---
 
 ## 0x01 java target

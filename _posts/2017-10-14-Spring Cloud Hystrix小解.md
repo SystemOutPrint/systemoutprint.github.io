@@ -2,7 +2,10 @@
 layout: post
 title:  "Spring Cloud Hystrix小解"
 date:   2017-10-13
-categories: Spring
+tags:
+    - Spring
+    - Spring Cloud
+    - Hystrix
 ---
 
 ## 0x01 概念

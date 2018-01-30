@@ -1,42 +1,95 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+encoding: utf-8
 
 # Site settings
-title: JavaDog
-brief-intro: 发际线和太阳肩并肩
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://systemoutprint.github.io" # the base hostname & protocol for your site
+title: Mr.Cai
+SEOTitle: 蔡佳何的博客 | Mr.Cai
+header-img: img/home-bg.jpg
+email: huxpro@gmail.com
+description: "专心写代码，不强求。"
+keyword: "蔡佳何, 蔡佳何的blog, java, spring, spring cloud"
+url: "https://systemoutprint.github.io"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-permalink: /:year/:month/:day/:title/
 
-description_footer: 技术博客
 
-github_username:  systemoutprint
+# SNS settings
+RSS: false
+weibo_username:     蔡佳何
+zhihu_username:     蔡小佳
+github_username:    systemoutprint
+#twitter_username:   xxx
+#facebook_username:  xxx
+#linkedin_username:  xxx
 
-# comments
-disqus_shortname: systemoutprint-github-io
+
 
 # Build settings
-markdown: kramdown
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
 
-# port
-# port: 1234
 
-# url
-category_dir: category/
-tag_dir: tag/
-
-# excerpt
-excerpt_separator: "\n\n\n\n"
-
-# paginate
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
-paginate: 6
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+disqus_username: todo
+
+# Netease setttings
+netease_comment: false
+
+
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+#ga_domain: huangxuan.me
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "不停的重构，<br>你就会发现代码的美。"
+sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+friends: [
+    # {
+    #     title: "Su",
+    #     href: "http://su.gallery/"
+    # },{
+]

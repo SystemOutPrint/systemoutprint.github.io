@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "Spring boot资源加载"
+title:  "Spring Boot资源加载"
 date:   2017-11-29
-categories: Spring
+tags:
+    - Spring
+    - Spring Boot
 ---
 
 ## 0x01 fat-jar

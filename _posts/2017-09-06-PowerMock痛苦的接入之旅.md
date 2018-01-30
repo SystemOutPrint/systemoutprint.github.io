@@ -1,8 +1,17 @@
 ---
-layout: post
-title:  "PowerMock痛苦的接入之旅"
-date:   2017-09-06
-categories: JUnit
+layout:       post
+title:        "PowerMock痛苦的接入之旅"
+subtitle:     "PowerMock痛苦的接入之旅"
+date:         2017-09-06 12:00:00
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
+tags:
+    - PowerMock
+    - 单元测试
+    - Mock
 ---
 
 ## 0x01 why？

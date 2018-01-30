@@ -1,8 +1,16 @@
 ---
-layout: post
-title:  "Spring Ioc小解"
-date:   2017-09-11
-categories: Spring
+layout:       post
+title:        "Spring Ioc小解"
+subtitle:     "Spring Ioc小解"
+date:         2017-09-11 12:00:00
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
+tags:
+    - Spring
+    - IOC
 ---
 
 ## 0x01 Ioc堆栈

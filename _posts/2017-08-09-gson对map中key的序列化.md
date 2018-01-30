@@ -1,8 +1,17 @@
 ---
-layout: post
-title:  "gson对map中key的序列化"
-date:   2017-08-09
-categories: gson
+layout:       post
+title:        "gson对map中key的序列化"
+subtitle:     "gson对map中key的序列化"
+date:         2017-08-09 12:00:00
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
+tags:
+    - Gson
+    - Java
+    - Map
 ---
 
 ## 0x01 问题

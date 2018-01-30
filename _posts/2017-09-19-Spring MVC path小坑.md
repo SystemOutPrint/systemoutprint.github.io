@@ -1,8 +1,16 @@
 ---
-layout: post
-title:  "Spring MVC path小坑"
-date:   2017-09-19
-categories: Spring
+layout:       post
+title:        "Spring MVC path小坑"
+subtitle:     "Spring MVC path小坑"
+date:         2017-09-19 12:00:00
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
+tags:
+    - Spring
+    - Spring MVC
 ---
 
 ## 0x01 问题

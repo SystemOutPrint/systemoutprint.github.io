@@ -1,8 +1,12 @@
 ---
 layout: post
-title:  "Spring cloud sleuth和zipkin"
+title:  "Spring Cloud Sleuth和Zipkin"
 date:   2017-09-26
-categories: Spring
+tags:
+    - Spring
+    - Spring Cloud
+    - Sleuth
+    - Zipkin
 ---
 
 ## 0x01 介绍

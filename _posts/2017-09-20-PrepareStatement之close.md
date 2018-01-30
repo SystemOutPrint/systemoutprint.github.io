@@ -2,7 +2,8 @@
 layout: post
 title:  "PrepareStatement之close"
 date:   2017-09-20
-categories: MySQL
+tags:
+    - MySQL
 ---
 
 ## 0x01 问题

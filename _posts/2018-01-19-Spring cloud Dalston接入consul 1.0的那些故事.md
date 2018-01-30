@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Spring cloud Dalston接入consul 1.0的那些故事"
+title:  "Spring Cloud Dalston接入consul 1.0的那些故事"
 date:   2018-01-19
-categories: Spring
+tags:
+    - Spring
+    - Spring Cloud
+    - consul
 ---
 
 ## 0x01 consul简介

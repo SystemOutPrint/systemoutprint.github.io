@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "Spring multi-profile config"
+title:  "Spring Multi-Profile config"
 date:   2017-10-25
-categories: Spring
+tags:
+    - Spring
+    - Spring Boot
 ---
 
 ## 0x01 yaml

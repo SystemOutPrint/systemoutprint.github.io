@@ -1,8 +1,15 @@
 ---
-layout: post
-title:  "Java中String的intern"
-date:   2017-06-09
-categories: Java
+layout:       post
+title:        "Java中String的intern"
+subtitle:     "Java中String的intern"
+date:         2017-06-09 12:00:00
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
+tags:
+    - Java
 ---
 
 ## 0x01 复现问题

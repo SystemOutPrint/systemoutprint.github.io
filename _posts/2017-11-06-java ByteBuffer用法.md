@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "java ByteBuffer用法"
+title:  "Java ByteBuffer用法"
 date:   2017-11-06
-categories: Java
+tags:
+    - Java
 ---
 
 ## 0x01 capacity

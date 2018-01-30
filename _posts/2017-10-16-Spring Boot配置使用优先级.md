@@ -2,7 +2,9 @@
 layout: post
 title:  "Spring Boot配置使用优先级"
 date:   2017-10-16
-categories: Spring
+tags:
+    - Spring
+    - Spring Boot
 ---
 
 配置使用的优先级从高到低的顺序:

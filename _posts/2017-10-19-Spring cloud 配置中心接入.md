@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Spring cloud 配置中心接入"
+title:  "Spring Cloud 配置中心接入"
 date:   2017-10-19
-categories: Spring
+tags:
+    - Spring
+    - Spring Cloud
+    - 配置中心
 ---
 
 ## 0x01 简介

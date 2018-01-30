@@ -1,8 +1,16 @@
 ---
-layout: post
-title:  "mysql RR隔离级别下的Next-key lock测试"
-date:   2017-09-01
-categories: MySQL
+layout:       post
+title:        "MySQL RR隔离级别下的Next-key lock测试"
+subtitle:     "MySQL RR隔离级别下的Next-key lock测试"
+date:         2017-09-01 12:00:00
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
+tags:
+    - MySQL
+    - 锁
 ---
 
 ## 0x01 测试环境

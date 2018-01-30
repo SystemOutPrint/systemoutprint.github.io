@@ -2,7 +2,10 @@
 layout: post
 title:  "Spring Boot Flyway"
 date:   2017-10-10
-categories: Spring
+tags:
+    - Spring
+    - Spring Boot
+    - Flyway
 ---
 
 ## 0x01 简介

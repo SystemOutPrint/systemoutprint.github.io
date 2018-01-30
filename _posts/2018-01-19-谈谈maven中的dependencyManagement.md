@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "谈谈maven中的dependencyManagement"
+title:  "谈谈Maven中的dependencyManagement"
 date:   2018-01-19
-categories: maven
+tags:
+    - Maven
 ---
 
 ## 0x01 dependencyManagement

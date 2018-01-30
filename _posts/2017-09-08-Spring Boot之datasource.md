@@ -1,8 +1,15 @@
 ---
-layout: post
-title:  "Spring Boot之datasource"
-date:   2017-09-08
-categories: Spring
+layout:       post
+title:        "Spring Boot之Datasource"
+date:         2017-09-08 12:00:00
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
+tags:
+    - Spring
+    - Spring Boot
 ---
 
 ## 0x01 application.yml

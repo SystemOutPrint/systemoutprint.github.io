@@ -2,7 +2,9 @@
 layout: post
 title:  "limax-checkpoint"
 date:   2017-11-01
-categories: limax
+tags:
+    - Limax
+    - 缓存
 ---
 
 ```java

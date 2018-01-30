@@ -2,7 +2,8 @@
 layout: post
 title:  "Maven多profile打包"
 date:   2017-11-02
-categories: maven
+tags:
+    - Maven
 ---
 
 ```xml
