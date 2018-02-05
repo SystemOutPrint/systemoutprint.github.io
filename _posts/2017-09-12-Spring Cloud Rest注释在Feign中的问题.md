@@ -136,3 +136,9 @@ protected void processAnnotationOnMethod(MethodMetadata data,
 	data.indexToExpander(new LinkedHashMap<Integer, Param.Expander>());
 }
 ```
+
+## 0x03 后续报道(2018-02-05)
+之前没有去查看新版本的更新，这两天想提交Pull request的时候发现已经有人fix这个问题了，<br>
+[spring-cloud/spring-cloud-netflix #1201 Feign: support @GetMapping and other annotations](https://github.com/spring-cloud/spring-cloud-netflix/issues/1201)。
+所以只要把spring cloud netflix core版本升上去这些compose annotation就可以在feign中正常使用了。
+
