@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Cloud Feign的loadbalancerkey扩展"
 date:   2018-01-05
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Cloud

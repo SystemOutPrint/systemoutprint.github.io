@@ -1,7 +1,7 @@
 ---
 layout:       post
-title:        "Spring Ioc小解"
-subtitle:     "Spring Ioc小解"
+title:        "Spring IOC小解"
+subtitle:     "Spring IOC小解"
 date:         2017-09-11 12:00:00
 author:       "CaiJiahe"
 header-img:   "img/tag-bg.jpg"

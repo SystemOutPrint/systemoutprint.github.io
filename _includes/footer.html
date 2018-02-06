@@ -208,11 +208,13 @@
     function generateCatalog (selector) {
 
         // interop with multilangual 
-        if ({{ page.multilingual }}) {
+        /*if ("{{ page.multilingual }}") {
             _containerSelector = 'div.post-container.active'
         } else {
             _containerSelector = 'div.post-container'
-        }
+        }*/
+		
+		_containerSelector = 'div.post-container'
 
         // init
         var P = $(_containerSelector),a,n,t,l,i,c;

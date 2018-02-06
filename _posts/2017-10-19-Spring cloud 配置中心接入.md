@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Cloud 配置中心接入"
 date:   2017-10-19
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Cloud

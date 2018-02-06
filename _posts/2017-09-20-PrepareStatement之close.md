@@ -2,6 +2,11 @@
 layout: post
 title:  "PrepareStatement之close"
 date:   2017-09-20
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - MySQL
 ---

@@ -2,7 +2,11 @@
 layout: post
 title:  "Spring Boot Auto-Configuration"
 date:   2018-02-06
-author: CaiJiahe
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring Boot
 ---

@@ -2,6 +2,11 @@
 layout: post
 title:  "KOF项目使用Spring Cloud趟坑小记"
 date:   2017-10-30
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Cloud

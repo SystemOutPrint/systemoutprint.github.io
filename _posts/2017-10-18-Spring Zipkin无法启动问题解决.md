@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Zipkin无法启动问题解决方法"
 date:   2017-10-18
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Cloud

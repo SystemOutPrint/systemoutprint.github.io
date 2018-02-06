@@ -2,6 +2,11 @@
 layout: post
 title:  "谈谈Maven中的dependencyManagement"
 date:   2018-01-19
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Maven
 ---

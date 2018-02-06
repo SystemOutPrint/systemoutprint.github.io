@@ -2,6 +2,11 @@
 layout: post
 title:  "Maven多profile打包"
 date:   2017-11-02
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Maven
 ---

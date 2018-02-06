@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Cloud Hystrix小解"
 date:   2017-10-13
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Cloud

@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Cloud Sleuth和Zipkin"
 date:   2017-09-26
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Cloud

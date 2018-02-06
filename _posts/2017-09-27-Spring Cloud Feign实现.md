@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Cloud Feign实现"
 date:   2017-09-27
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Cloud

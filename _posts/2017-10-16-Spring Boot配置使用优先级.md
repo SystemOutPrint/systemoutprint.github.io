@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Boot配置使用优先级"
 date:   2017-10-16
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Boot

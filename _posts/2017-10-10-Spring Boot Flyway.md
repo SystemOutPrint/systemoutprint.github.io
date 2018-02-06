@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Boot Flyway"
 date:   2017-10-10
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Boot

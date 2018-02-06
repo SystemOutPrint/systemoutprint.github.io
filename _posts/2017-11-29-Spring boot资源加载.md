@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Boot资源加载"
 date:   2017-11-29
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Boot

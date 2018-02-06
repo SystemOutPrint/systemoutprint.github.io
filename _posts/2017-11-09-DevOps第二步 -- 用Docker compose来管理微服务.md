@@ -2,6 +2,11 @@
 layout: post
 title:  "DevOps第二步 -- 用Docker compose来管理微服务容器"
 date:   2017-11-03
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 categories: DevOps
 ---
 

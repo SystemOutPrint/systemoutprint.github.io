@@ -2,6 +2,11 @@
 layout: post
 title:  "Spring Cloud Dalston接入consul 1.0的那些故事"
 date:   2018-01-19
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Spring
     - Spring Cloud

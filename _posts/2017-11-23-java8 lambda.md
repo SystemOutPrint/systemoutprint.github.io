@@ -1,7 +1,12 @@
 ---
 layout: post
-title:  "Java8 lambda"
+title:  "Java8 Lambda"
 date:   2017-11-23
+author:       "CaiJiahe"
+header-img:   "img/tag-bg.jpg"
+header-mask:  0.3
+catalog:      true
+multilingual: true
 tags:
     - Java
     - lambda
