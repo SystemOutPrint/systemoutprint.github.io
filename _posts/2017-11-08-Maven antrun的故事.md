@@ -36,3 +36,12 @@ tags:
 	<arg value="-java" />
 </java>
 ```
+
+## 0x02 Referencing the Maven Classpaths
+
+	Note: the old format "maven.dependency.groupId.artifactId[.classifier].type.path" has been deprecated and should no longer be used.
+	
+现在的格式是 
+	
+	groupId:artifactId:type[:classifier]
+
