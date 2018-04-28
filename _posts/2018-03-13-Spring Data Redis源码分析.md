@@ -18,8 +18,66 @@ tags:
 >> [DATAREDIS-783 Fix typo in LettuceReactiveRedisConnection](https://github.com/spring-projects/spring-data-redis/pull/321)<br>
 >> [DATAREDIS-784 Add support for reactive [INCR | INCRBY | INCRBYFLOAT | DECR | DECRBY]](https://github.com/spring-projects/spring-data-redis/pull/322)
 
-## 0x01 简介
-这个框架是Spring对Redis的胶水框架，集成了Jedis和Lettuce这两个java的redis客户端。整个项目的命令核心接口都在`org.springframework.data.redis.connection`目录下，分为命令式接口和响应式接口。
+## 0x01 Auto-Configuration
+这个框架是Spring对Redis的胶水框架，集成了Jedis和Lettuce这两个java的redis客户端。整个项目的命令核心接口都在`org.springframework.data.redis.connection`目录下，分为响应式接口和响应式接口。
+```java
+// org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+@Configuration
+@ConditionalOnClass(RedisOperations.class)
+@EnableConfigurationProperties(RedisProperties.class)
+@Import({ LettuceConnectionConfiguration.class, JedisConnectionConfiguration.class })
+public class RedisAutoConfiguration {
+	...
+}
+
+@Configuration
+@ConditionalOnClass(RedisClient.class)
+class LettuceConnectionConfiguration extends RedisConnectionConfiguration {
+	
+	@Bean
+	@ConditionalOnMissingBean(RedisConnectionFactory.class)
+	public LettuceConnectionFactory redisConnectionFactory(
+			ClientResources clientResources) throws UnknownHostException {
+		LettuceClientConfiguration clientConfig = getLettuceClientConfiguration(
+				clientResources, this.properties.getLettuce().getPool());
+		return createLettuceConnectionFactory(clientConfig);
+	}
+
+	private LettuceConnectionFactory createLettuceConnectionFactory(
+			LettuceClientConfiguration clientConfiguration) {
+		if (getSentinelConfig() != null) {
+			return new LettuceConnectionFactory(getSentinelConfig(), clientConfiguration);
+		}
+		if (getClusterConfiguration() != null) {
+			return new LettuceConnectionFactory(getClusterConfiguration(),
+					clientConfiguration);
+		}
+		return new LettuceConnectionFactory(getStandaloneConfig(), clientConfiguration);
+	}
+	
+	protected final RedisClusterConfiguration getClusterConfiguration() {
+		if (this.clusterConfiguration != null) {
+			return this.clusterConfiguration;
+		}
+		if (this.properties.getCluster() == null) {
+			return null;
+		}
+		RedisProperties.Cluster clusterProperties = this.properties.getCluster();
+		RedisClusterConfiguration config = new RedisClusterConfiguration(
+				clusterProperties.getNodes());
+		if (clusterProperties.getMaxRedirects() != null) {
+			config.setMaxRedirects(clusterProperties.getMaxRedirects());
+		}
+		if (this.properties.getPassword() != null) {
+			config.setPassword(RedisPassword.of(this.properties.getPassword()));
+		}
+		return config;
+	}
+	
+	...
+}
+```
+`RedisAutoConfiguration`判断是否有Lettuce的依赖，然后解析`spring.redis`的`ConfigurationProperties`创建好配置Bean或者通过`ObjectProvider`来获取各种配置bean。
 
 ## 0x02 阻塞式API结构
 
@@ -63,9 +121,9 @@ public interface RedisConnection extends RedisCommands {
 }
 ```
 
-这些Command的接口实现大同小异，无非是通过调用jedis或lettuce连接来调用这些命令，但是对事务和pipeline的支持过于粗糙，在每个方法里面去做特殊判断，Orz。
+Spring Data Redis基于命令模式，这些Command的接口实现大同小异，无非是通过调用jedis或lettuce连接中的`execute`方法来调用这些命令，实现在standalone和cluster不同环境中的调用。但是对阻塞式接口的事务和pipeline的支持过于粗糙，需要在每个方法里面去做特殊判断，Orz。
 
-## 0x03 命令式API结构
+## 0x03 响应式API结构
 Reactive命令接口:<br>
 ```java
 public interface ReactiveRedisConnection extends Closeable {
@@ -121,7 +179,7 @@ public interface ReactiveRedisConnection extends Closeable {
 同阻塞式接口类似，也是在调用lettuce提供的响应式接口。
 
 ## 0x04 封装
-无论是命令式还是响应式的接口，Commands方法对用户都不是很友好，所以Spring Data Redis封装了一层Operations接口，用来适配Commands接口里的对应方法，方便使用者使用。
+无论是响应式还是阻塞式的接口，Commands方法对用户都不是很友好，所以Spring Data Redis封装了一层Operations接口，用来适配Commands接口里的对应方法(ShortCut)，方便使用者使用。
 
 ## 0x05 问题
 目前Spring Data Redis 2.0还是存在一些问题的，比如Reactive命令接口支持不完善，没有对事务、pipeline的支持。<br>
