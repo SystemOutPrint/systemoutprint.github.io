@@ -53,4 +53,4 @@ pipeline {
 `sshagent`只能使用private key的credentials，这样的话，要先使用`ssh-keygen`生成`private key`和`public key`，然后将public key使用`ssh-copy-id`拷贝到远程服务器上，最后将private key配置到jenkins的credentials中，这样在sshagent中就可以使用这个credentialsId了。
 
 ## 0x03 使用方法
-[![Jenkins2.0 Pipeline使用指南]](https://www.nowcoder.com/discuss/69512)
+[Jenkins2.0 Pipeline使用指南](https://www.nowcoder.com/discuss/69512)
