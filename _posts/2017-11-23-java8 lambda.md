@@ -131,6 +131,7 @@ System.out.println(sum);
 * Collectors.toList() 构造一个list
 * Collectors.toSet() 构造一个set
 * Collectors.toMap(getKey(), getValue(), keyRepeat()) 构造一个map
+* Collectors.toMap(getKey(), getValue(), keyRepeat(), constructor()) 构造一个map
 * Collectors.joining() 将字符串连接起来
 * Collectors.joining(分隔符) 将字符串和分隔符连接起来
 * Collectors.groupingBy(组名) 根据组名将流分为N个组，返回值的key值是组名，value是一个List
@@ -159,4 +160,13 @@ words.sorted().forEach(System.out::print);
 // output aaabbc
 words = Stream.of("bb", "aaa", "c");
 words.sorted((str1, str2) -> str2.length() - str1.length()).forEach(System.out::print);
+```
+
+## 0x10 peek
+对流中元素执行操作并返回一个该流
+```java
+// output bbaacc3
+Stream<String> words = Stream.of("bb", "aa", "cc");
+long total = words.peek(System.out::print).count();
+System.out.println(total)
 ```
