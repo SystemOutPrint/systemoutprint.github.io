@@ -80,3 +80,13 @@ kubeadm init --kubernetes-version=v1.11.0 --pod-network-cidr=10.244.0.0/16
 
 ## 0x06 kubeadm join
 在worker的node上执行`kubeadm join 10.237.38.102:6443 --token xxx --discovery-token-ca-cert-hash sha256:xxx`就好了。
+
+## 0x07 Failed to get system container stats for "/system.slice/kubelet.service"
+`kubectl get po`一下，发现如下报错。
+
+		Failed to get system container stats for "/system.slice/kubelet.service": failed to get cgroup stats for "/system.slice/kubelet.service": failed to get container info for "/system.slice/kubelet.service": unknown container "/system.slice/kubelet.service"
+
+解决办法:在`/etc/systemd/system/kubelet.service.d/10-kubeadm.conf`的kubelet启动参数中加入`--runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice`
+
+## 0x08 The connection to the server localhost:8080 was refused
+`kubectl get po`一下，发现报错。解决办法是将master的`~/.kube/config`拷贝到从节点的对应目录下。
